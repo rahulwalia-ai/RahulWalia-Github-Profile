@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Rahul Walia — Unity Developer &amp; Game Creator</title>
+  <desc id="desc">Neon arcade banner. Typing line cycles: Crafting immersive gaming experiences, Building virtual worlds, Creating memorable gameplay, Shipping real-time 3D tools.</desc>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2de2ff"/>
+      <stop offset="0.5" stop-color="#7b8cff"/>
+      <stop offset="1" stop-color="#ff3dac"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#11162e" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="vignette" cx="0.5" cy="0.45" r="0.7">
+      <stop offset="0" stop-color="#06070d" stop-opacity="0"/>
+      <stop offset="1" stop-color="#06070d" stop-opacity="0.95"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="frame"><rect width="1200" height="320" rx="18"/></clipPath>
+    <clipPath id="bar"><rect x="254" y="226" width="692" height="38" rx="4"/></clipPath>
+  </defs>
+
+  <style>
+    .mono { font-family: 'Share Tech Mono', 'JetBrains Mono', Consolas, 'SFMono-Regular', Menlo, 'Courier New', monospace; }
+    .display { font-family: 'Orbitron', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; }
+    .hud { fill: #6f78a0; font-size: 14px; letter-spacing: 3px; }
+    .twinkle { animation: twinkle 3s ease-in-out infinite; }
+    .t2 { animation-delay: -0.8s; } .t3 { animation-delay: -1.6s; } .t4 { animation-delay: -2.3s; }
+    @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: 1; } }
+    .blink { animation: blink 1.1s steps(2, jump-none) infinite; }
+    @keyframes blink { 0% { opacity: 1; } 100% { opacity: 0; } }
+    .scan { animation: scan 6s linear infinite; }
+    @keyframes scan { from { transform: translateY(-40px); } to { transform: translateY(340px); } }
+
+    /* typing line: four phrases share a 16s loop, 4s each */
+    .p0 { animation: p0 16s infinite; } .p1 { animation: p1 16s infinite; }
+    .p2 { animation: p2 16s infinite; } .p3 { animation: p3 16s infinite; }
+    @keyframes p0 { 0%, 23.9% { opacity: 1; } 24%, 100% { opacity: 0; } }
+    @keyframes p1 { 0%, 24.9% { opacity: 0; } 25%, 48.9% { opacity: 1; } 49%, 100% { opacity: 0; } }
+    @keyframes p2 { 0%, 49.9% { opacity: 0; } 50%, 73.9% { opacity: 1; } 74%, 100% { opacity: 0; } }
+    @keyframes p3 { 0%, 74.9% { opacity: 0; } 75%, 98.9% { opacity: 1; } 99%, 100% { opacity: 0; } }
+    .c0 { animation: c0 16s steps(37, end) infinite; } .c1 { animation: c1 16s steps(23, end) infinite; }
+    .c2 { animation: c2 16s steps(27, end) infinite; } .c3 { animation: c3 16s steps(27, end) infinite; }
+    @keyframes c0 { 0% { transform: translateX(0); } 9%, 100% { transform: translateX(481px); } }
+    @keyframes c1 { 0%, 25% { transform: translateX(0); } 32%, 100% { transform: translateX(299px); } }
+    @keyframes c2 { 0%, 50% { transform: translateX(0); } 58%, 100% { transform: translateX(351px); } }
+    @keyframes c3 { 0%, 75% { transform: translateX(0); } 83%, 100% { transform: translateX(351px); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .p1, .p2, .p3, .scan { display: none; }
+      .p0, .twinkle, .blink { animation: none; opacity: 1; }
+      .c0 { animation: none; transform: translateX(481px); }
+    }
+  </style>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="320" fill="#06070d"/>
+    <rect width="1200" height="320" fill="url(#grid)"/>
+    <rect width="1200" height="320" fill="url(#vignette)"/>
+    <rect class="scan" x="0" y="0" width="1200" height="2" fill="#2de2ff" opacity="0.08"/>
+
+    <!-- stars -->
+    <rect class="twinkle" x="132" y="214" width="4" height="4" fill="#2de2ff"/>
+    <rect class="twinkle t2" x="1046" y="96" width="4" height="4" fill="#ff3dac"/>
+    <rect class="twinkle t3" x="214" y="92" width="3" height="3" fill="#b6ff3d"/>
+    <rect class="twinkle t4" x="1004" y="236" width="3" height="3" fill="#ffbe47"/>
+    <rect class="twinkle t2" x="76" y="140" width="3" height="3" fill="#7b8cff"/>
+    <rect class="twinkle t3" x="1118" y="178" width="3" height="3" fill="#2de2ff"/>
+
+    <!-- HUD -->
+    <text class="mono hud" x="40" y="44">PLAYER 1 · RAHUL</text>
+    <text class="mono hud" x="1160" y="44" text-anchor="end">GAMES BUILT <tspan fill="#b6ff3d">06</tspan></text>
+    <text class="mono hud" x="40" y="292">DELHI, IN</text>
+    <text class="mono blink" x="1160" y="292" text-anchor="end" fill="#ffbe47" font-size="14" letter-spacing="3">▶ PRESS START</text>
+
+    <!-- name -->
+    <text class="display" x="600" y="134" text-anchor="middle" font-size="68" letter-spacing="10" fill="url(#grad)" filter="url(#glow)" textLength="640" lengthAdjust="spacing">RAHUL WALIA</text>
+    <text class="mono" x="600" y="182" text-anchor="middle" font-size="18" letter-spacing="5" fill="#a3acd1">UNITY DEVELOPER · GAME CREATOR · SOFTWARE ENGINEER</text>
+
+    <!-- typing bar (like Keyboard Warrior's input) -->
+    <rect x="252" y="224" width="696" height="42" rx="6" fill="#0b0e1c" stroke="#39ff88" stroke-opacity="0.55"/>
+    <text class="mono" x="272" y="252" font-size="22" fill="#39ff88">&gt;</text>
+
+    <g class="mono" font-size="22" fill="#e9edff">
+      <text class="p0" x="296" y="252" textLength="481" lengthAdjust="spacing">Crafting immersive gaming experiences</text>
+      <text class="p1" x="296" y="252" textLength="299" lengthAdjust="spacing">Building virtual worlds</text>
+      <text class="p2" x="296" y="252" textLength="351" lengthAdjust="spacing">Creating memorable gameplay</text>
+      <text class="p3" x="296" y="252" textLength="351" lengthAdjust="spacing">Shipping real-time 3D tools</text>
+    </g>
+
+    <!-- covers slide right to "type" each phrase; the cursor rides their left edge -->
+    <g clip-path="url(#bar)">
+      <g class="p0"><g class="c0"><rect x="294" y="228" width="660" height="34" fill="#0b0e1c"/><rect class="blink" x="296" y="233" width="11" height="24" fill="#39ff88"/></g></g>
+      <g class="p1"><g class="c1"><rect x="294" y="228" width="660" height="34" fill="#0b0e1c"/><rect class="blink" x="296" y="233" width="11" height="24" fill="#39ff88"/></g></g>
+      <g class="p2"><g class="c2"><rect x="294" y="228" width="660" height="34" fill="#0b0e1c"/><rect class="blink" x="296" y="233" width="11" height="24" fill="#39ff88"/></g></g>
+      <g class="p3"><g class="c3"><rect x="294" y="228" width="660" height="34" fill="#0b0e1c"/><rect class="blink" x="296" y="233" width="11" height="24" fill="#39ff88"/></g></g>
+    </g>
+
+    <!-- corner brackets -->
+    <g fill="none" stroke="#2de2ff" stroke-width="3" opacity="0.8">
+      <path d="M18 54V18H54"/><path d="M1146 18H1182V54"/>
+      <path d="M18 266V302H54"/><path d="M1146 302H1182V266"/>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="319" rx="18" fill="none" stroke="#8296ff" stroke-opacity="0.32"/>
+</svg>
